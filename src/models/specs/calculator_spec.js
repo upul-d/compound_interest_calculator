@@ -8,4 +8,11 @@ describe('calculator', () => {
     const expected = 0.05;
     assert.strictEqual(actual, expected);
   });
+
+  // the expected value has not been converted to a Number as it is unnecessary for the React front-end
+  it('should be able to calculate compound interest to two decimal places', function() {
+    const actual = calculator.calculateCompoundInterest('5000', '5', '10');
+    const expected = '8144.47';
+    assert.strictEqual(actual, expected);
+  });
 })
