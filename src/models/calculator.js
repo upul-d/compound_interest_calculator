@@ -1,1 +1,7 @@
-// TODO: calculator model contianing business logic
+const calculator = {
+  getInterestRateAsDecimal: function(interestRate) {
+    return (interestRate / 100);
+  }
+}
+
+module.exports = calculator;
