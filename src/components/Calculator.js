@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ResultView from './ResultView';
 
 class Calculator extends Component {
   constructor(props) {
@@ -7,7 +8,11 @@ class Calculator extends Component {
   }
 
   render() {
-    return <h1>{this.props.title}</h1>
+    return <div>
+      <h1>{this.props.title}</h1>
+      {/* ResultView given temporarily hard-coded balance*/}
+      <ResultView balance='10.00'/>
+    </div>
   }
 }
 
