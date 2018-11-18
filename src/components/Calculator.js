@@ -62,33 +62,43 @@ class Calculator extends Component {
       <div>
         <h1>{this.props.title}</h1>
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
-          <input
-            type="number"
-            placeholder="Initial Amount"
-            min="1"
-            required
-            value={this.state.initialAmount}
-            onChange={this.handleInitialAmountChange}
-          />
+          <label>
+            Initial Amount
+            <br/>
+            <input
+              id="amount"
+              type="number"
+              min="1"
+              required
+              value={this.state.initialAmount}
+              onChange={this.handleInitialAmountChange}
+            />
+          </label>
           <br/>
-          <input
-            type="number"
-            placeholder="Interest Rate"
-            min="0.01"
-            step="any"
-            required
-            value={this.state.interestRate}
-            onChange={this.handleInterestRateChange}
-          />
+          <label>
+            Interest Rate
+            <br/>
+            <input
+              type="number"
+              min="0.01"
+              step="any"
+              required
+              value={this.state.interestRate}
+              onChange={this.handleInterestRateChange}
+            />
+          </label>
           <br/>
-          <input
-            type="number"
-            placeholder="Number of Years"
-            min="1"
-            required
-            value={this.state.numberOfYears}
-            onChange={this.handleNumberOfYearsChange}
-          />
+          <label>
+            Years
+            <br/>
+            <input
+              type="number"
+              min="1"
+              required
+              value={this.state.numberOfYears}
+              onChange={this.handleNumberOfYearsChange}
+            />
+          </label>
           <br/>
           <input type="submit" value="Calculate Compound Interest" />
           <br/>
