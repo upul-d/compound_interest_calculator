@@ -85,7 +85,6 @@ class Calculator extends Component {
             type="number"
             placeholder="Number of Years"
             min="1"
-            step="any"
             required
             value={this.state.numberOfYears}
             onChange={this.handleNumberOfYearsChange}
