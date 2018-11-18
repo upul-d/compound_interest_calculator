@@ -45,8 +45,9 @@
   font-weight: bold;
 }
 
-.usage-notes-container {
-  margin-top: 10rem;
+.usage-notes-wrapper {
+  margin-top: 4rem;
+  font-size: 80%
 }
 
 .usage-notes-header {
