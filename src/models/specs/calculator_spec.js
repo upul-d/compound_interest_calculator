@@ -25,21 +25,33 @@ describe('calculator', () => {
     assert.strictEqual(actual, expected);
   });
 
-  it('should not accept negative numbers (integers) as input', () => {
+  it('should reject negative numbers (integers) as input', () => {
     const actual = calculator.isValidInput('-1');
     const expected = false;
     assert.strictEqual(actual, expected);
   });
 
-  it('should not accept negative numbers (floats) as input', () => {
+  it('should reject negative numbers (floats) as input', () => {
     const actual = calculator.isValidInput('-0.1');
     const expected = false;
     assert.strictEqual(actual, expected);
   });
 
-  it('should not accept negative numbers (floats) without pre-decimal point zero as input', () => {
+  it('should reject negative numbers (floats) without pre-decimal point number as input', () => {
     const actual = calculator.isValidInput('-.1');
     const expected = false;
     assert.strictEqual(actual, expected);
+  });
+
+  it('should accept positive numbers as input', () => {
+    const actualPositiveInteger = calculator.isValidInput('1');
+    const expected = true;
+    assert.strictEqual(actualPositiveInteger, expected);
+
+    const actualPositiveFloat = calculator.isValidInput('0.08');
+    assert.strictEqual(actualPositiveFloat, expected);
+
+    const actualPositiveFloatWithoutPreDecimalNumber = calculator.isValidInput('1.08');
+    assert.strictEqual(actualPositiveFloatWithoutPreDecimalNumber, expected);
   });
 })
