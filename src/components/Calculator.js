@@ -11,7 +11,8 @@ class Calculator extends Component {
       interestRate: '',
       numberOfYears: '',
       balance: '',
-      initialAmountForResultView: ''
+      initialAmountForResultView: '',
+      amountFromInterest: ''
     };
 
     this.handleInitialAmountChange = this.handleInitialAmountChange.bind(this);
@@ -43,13 +44,15 @@ class Calculator extends Component {
     }
 
     const balance = calculator.calculateCompoundInterest(initialAmount, interestRate, numberOfYears);
+    const amountFromInterest = calculator.calculateAmountGainedFromInterest(balance, initialAmount);
     this.setState(
       {
         initialAmount: '',
         interestRate: '',
         numberOfYears: '',
         balance: balance,
-        initialAmountForResultView: initialAmount
+        initialAmountForResultView: initialAmount,
+        amountFromInterest: amountFromInterest
       }
     );
   }
@@ -91,7 +94,11 @@ class Calculator extends Component {
           <input type="submit" value="Calculate Compound Interest" />
           <br/>
         </form>
-        <ResultView balance={this.state.balance} initialAmountForResultView={this.state.initialAmountForResultView}/>
+        <ResultView
+          balance={this.state.balance}
+          initialAmountForResultView={this.state.initialAmountForResultView}
+          amountFromInterest={this.state.amountFromInterest}
+        />
       </div>
     );
   }
