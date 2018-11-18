@@ -12,12 +12,26 @@ class Calculator extends Component {
       balance: ''
     };
 
+    this.handleInitialAmountChange = this.handleInitialAmountChange.bind(this);
+    this.handleInterestRateChange = this.handleInterestRateChange.bind(this);
+    this.handleNumberOfYearsChange = this.handleNumberOfYearsChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleInitialAmountChange(event) {
+    this.setState({initialAmount: event.target.value});
+  }
+  
+  handleInterestRateChange(event) {
+    this.setState({interestRate: event.target.value});
+  }
+
+  handleNumberOfYearsChange(event) {
+    this.setState({numberOfYears: event.target.value});
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('in handleSubmit()');
   }
 
   render() {
@@ -29,6 +43,7 @@ class Calculator extends Component {
           placeholder="Initial Amount"
           min="1"
           required
+          onChange={this.handleInitialAmountChange}
         />
         <br/>
         <input
@@ -37,6 +52,7 @@ class Calculator extends Component {
           min="0.01"
           step="any"
           required
+          onChange={this.handleInterestRateChange}
         />
         <br/>
         <input
@@ -45,6 +61,7 @@ class Calculator extends Component {
           min="1"
           step="any"
           required
+          onChange={this.handleNumberOfYearsChange}
         />
         <br/>
         <input type="submit" value="Calculate Compound Interest" />
