@@ -5,9 +5,9 @@ const ResultView = (props) => {
     <div className="result-view-wrapper">
     <h2>Your Result</h2>
     <p className="balance-display">Balance: £{props.balance}</p>
-    <p>Initial Amount (Principal): £{props.initialAmountForResultView}</p>
-    <p>Interest Rate: {props.interestRateForResultView}%</p>
-    <p>Number of Years: {props.numberOfYearsForResultView}</p>
+    <p>Initial Amount (Principal): £{props.inputsForResultView.initialAmountForResultView}</p>
+    <p>Interest Rate: {props.inputsForResultView.interestRateForResultView}%</p>
+    <p>Number of Years: {props.inputsForResultView.numberOfYearsForResultView}</p>
     <p>Amount From Interest: £{props.amountFromInterest}</p>
     </div>
   );
