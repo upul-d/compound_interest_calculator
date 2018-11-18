@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ResultView from './ResultView';
 import calculator from '../models/calculator.js';
 
-
 class Calculator extends Component {
   constructor(props) {
     super(props)
@@ -43,7 +42,14 @@ class Calculator extends Component {
     }
 
     const balance = calculator.calculateCompoundInterest(initialAmount, interestRate, numberOfYears);
-    console.log(balance);
+    this.setState(
+      {
+        initialAmount: '',
+        interestRate: '',
+        numberOfYears: '',
+        balance: balance
+      }
+    )
   }
 
   render() {
@@ -55,6 +61,7 @@ class Calculator extends Component {
           placeholder="Initial Amount"
           min="1"
           required
+          value={this.state.initialAmount}
           onChange={this.handleInitialAmountChange}
         />
         <br/>
@@ -64,6 +71,7 @@ class Calculator extends Component {
           min="0.01"
           step="any"
           required
+          value={this.state.interestRate}
           onChange={this.handleInterestRateChange}
         />
         <br/>
@@ -73,6 +81,7 @@ class Calculator extends Component {
           min="1"
           step="any"
           required
+          value={this.state.numberOfYears}
           onChange={this.handleNumberOfYearsChange}
         />
         <br/>
