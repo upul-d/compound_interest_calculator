@@ -14,8 +14,9 @@ This project is a React app which allows compound interest to be calculated. The
 
 In the project directory:
 
-* The command `npm start` - will run the app in the development mode
-* Go to [http://localhost:3000](http://localhost:3000) to view it in the browser
+1. Use `npm install` to install the necessary dependencies
+2. Then, type `npm start` to run the app in development mode
+3. If the browser doesn't open the app in a new tab, go to [http://localhost:3000](http://localhost:3000) to view the app running
 
 ## Task
 Using React JS build a front-end application that allows a user to calculate compound interest on their investment over years.
