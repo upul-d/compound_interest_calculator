@@ -36,4 +36,10 @@ describe('calculator', () => {
     const expected = false;
     assert.strictEqual(actual, expected);
   });
+
+  it('should not accept negative numbers (floats) without pre-decimal point zero as input', () => {
+    const actual = calculator.isValidInput('-.1');
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
 })
