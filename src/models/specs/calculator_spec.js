@@ -24,4 +24,10 @@ describe('calculator', () => {
     const expected = '3144.47';
     assert.strictEqual(actual, expected);
   });
+
+  it('should not accept negative numbers (integers) as input', () => {
+    const actual = calculator.isValidInput('-1');
+    const expected = false;
+    assert.strictEqual(actual, expected);
+  });
 })
