@@ -21,7 +21,7 @@ describe('calculator', () => {
 
   it('should be able to calculate the amount gained from compound interest', () => {
     const actual = calculator.calculateAmountGainedFromInterest(compoundInterest, initialAmount);
-    const expected = (compoundInterest - initialAmount).toFixed(2);
+    const expected = '3144.47';
     assert.strictEqual(actual, expected);
   });
 })
