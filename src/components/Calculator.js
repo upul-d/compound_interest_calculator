@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import ResultView from './ResultView';
+import calculator from '../models/calculator.js';
+
 
 class Calculator extends Component {
   constructor(props) {
@@ -21,7 +23,7 @@ class Calculator extends Component {
   handleInitialAmountChange(event) {
     this.setState({initialAmount: event.target.value});
   }
-  
+
   handleInterestRateChange(event) {
     this.setState({interestRate: event.target.value});
   }
@@ -32,6 +34,16 @@ class Calculator extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const initialAmount = this.state.initialAmount;
+    const interestRate = this.state.interestRate;
+    const numberOfYears = this.state.numberOfYears;
+
+    if (!initialAmount || !interestRate || !numberOfYears) {
+      return;
+    }
+
+    const balance = calculator.calculateCompoundInterest(initialAmount, interestRate, numberOfYears);
+    console.log(balance);
   }
 
   render() {
