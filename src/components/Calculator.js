@@ -70,6 +70,7 @@ class Calculator extends Component {
               id="amount"
               type="number"
               min="1"
+              step="any"
               required
               value={this.state.initialAmount}
               onChange={this.handleInitialAmountChange}
