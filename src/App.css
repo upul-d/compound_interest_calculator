@@ -16,7 +16,7 @@
 
 #amount {
   background-image: url('~/pound_sign.svg');
-  background-size: 0.9rem;
+  background-size: 0.6rem;
   background-repeat: no-repeat;
   background-position:left;
   padding-left: 0.8rem;
@@ -33,6 +33,14 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   cursor: pointer;
+}
+
+.result-view-wrapper {
+  margin-top: 4rem;
+}
+
+.balance-display {
+  font-weight: bold;
 }
 
 .usage-notes-container {

@@ -13,6 +13,8 @@ class Calculator extends Component {
       numberOfYears: '',
       balance: '',
       initialAmountForResultView: null,
+      interestRateForResultView: null,
+      numberOfYearsForResultView: null,
       amountFromInterest: ''
     };
 
@@ -53,6 +55,8 @@ class Calculator extends Component {
         numberOfYears: '',
         balance: balance,
         initialAmountForResultView: Number.parseFloat(initialAmount).toFixed(2),
+        interestRateForResultView: Number.parseFloat(interestRate).toFixed(2),
+        numberOfYearsForResultView: numberOfYears,
         amountFromInterest: amountFromInterest
       }
     );
@@ -114,6 +118,8 @@ class Calculator extends Component {
         <ResultView
           balance={this.state.balance}
           initialAmountForResultView={this.state.initialAmountForResultView}
+          interestRateForResultView={this.state.interestRateForResultView}
+          numberOfYearsForResultView={this.state.numberOfYearsForResultView}
           amountFromInterest={this.state.amountFromInterest}
         />
         <UsageNotesView />

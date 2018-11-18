@@ -1,12 +1,14 @@
 import React from 'react';
 
-const ResultView = ({balance, initialAmountForResultView, amountFromInterest}) => {
+const ResultView = (props) => {
   return (
-    <div>
+    <div className="result-view-wrapper">
     <h2>Your Result</h2>
-    <p>Balance: £{balance}</p>
-    <p>Initial Amount (Principal): £{initialAmountForResultView}</p>
-    <p>Amount From Interest: £{amountFromInterest}</p>
+    <p className="balance-display">Balance: £{props.balance}</p>
+    <p>Initial Amount (Principal): £{props.initialAmountForResultView}</p>
+    <p>Interest Rate: {props.interestRateForResultView}%</p>
+    <p>Number of Years: {props.numberOfYearsForResultView}</p>
+    <p>Amount From Interest: £{props.amountFromInterest}</p>
     </div>
   );
 }
