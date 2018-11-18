@@ -4,18 +4,26 @@ import ResultView from './ResultView';
 class Calculator extends Component {
   constructor(props) {
     super(props)
+
     this.state = {
       initialAmount: '',
       interestRate: '',
       numberOfYears: '',
       balance: ''
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    event.preventDefault();
+    console.log('in handleSubmit()');
   }
 
   render() {
     return <div>
       <h1>{this.props.title}</h1>
-      <form className="compound-interest-form">
+      <form className="compound-interest-form" onSubmit={this.handleSubmit}>
         <input
           type="number"
           placeholder="Initial Amount"
