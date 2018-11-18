@@ -105,7 +105,7 @@ class Calculator extends Component {
               />
             </label>
           </div>
-          <input type="submit" value="Calculate Compound Interest" />
+          <input id="calculate-button" type="submit" value="Calculate" />
         </form>
         <ResultView
           balance={this.state.balance}

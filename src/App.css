@@ -2,6 +2,7 @@
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+
 .input-hint {
   font-size: 80%;
   line-height: 1;
@@ -15,6 +16,19 @@
   background-repeat: no-repeat;
   background-position:left;
   padding-left: 0.8rem;
+  width: 7rem;
+}
+
+#calculate-button {
+  background-color: #6495ED;
+  border: 0.1px;
+  border-style:inset;
+  font-family: inherit;
+  font-size: 80%;
+  color: black;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .usage-notes-container {
