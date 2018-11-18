@@ -12,7 +12,7 @@ class Calculator extends Component {
       interestRate: '',
       numberOfYears: '',
       balance: '',
-      initialAmountForResultView: '',
+      initialAmountForResultView: null,
       amountFromInterest: ''
     };
 
@@ -52,7 +52,7 @@ class Calculator extends Component {
         interestRate: '',
         numberOfYears: '',
         balance: balance,
-        initialAmountForResultView: initialAmount,
+        initialAmountForResultView: Number.parseFloat(initialAmount).toFixed(2),
         amountFromInterest: amountFromInterest
       }
     );
