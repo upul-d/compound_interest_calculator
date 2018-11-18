@@ -7,7 +7,6 @@ const ResultView = ({balance, initialAmountForResultView, amountFromInterest}) =
     <p>Balance: £{balance}</p>
     <p>Initial Amount (Principal): £{initialAmountForResultView}</p>
     <p>Amount From Interest: £{amountFromInterest}</p>
-    <p>{typeof initialAmountForResultView}</p>
     </div>
   );
 }

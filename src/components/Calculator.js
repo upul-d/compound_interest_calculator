@@ -63,45 +63,48 @@ class Calculator extends Component {
       <div>
         <h1>{this.props.title}</h1>
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
-          <label>
-            Initial Amount (Principal)
-            <p className="input-hint">Minimum: £1</p>
-            <input
-              id="amount"
-              type="number"
-              min="1"
-              step="any"
-              required
-              value={this.state.initialAmount}
-              onChange={this.handleInitialAmountChange}
-            />
-          </label>
-          <br/>
-          <label>
-            Interest Rate (%)
-            <p className="input-hint">Minimum: 0.01%</p>
-            <input
-              type="number"
-              min="0.01"
-              step="any"
-              required
-              value={this.state.interestRate}
-              onChange={this.handleInterestRateChange}
-            />
-          </label>
-          <br/>
-          <label>
-            Number of Years
-            <p className="input-hint">Whole years only</p>
-            <input
-              type="number"
-              min="1"
-              required
-              value={this.state.numberOfYears}
-              onChange={this.handleNumberOfYearsChange}
-            />
-          </label>
-          <br/>
+          <div className="input-wrapper">
+            <label>
+              Initial Amount (Principal)
+              <p className="input-hint">Minimum: £1</p>
+              <input
+                id="amount"
+                type="number"
+                min="1"
+                step="any"
+                required
+                value={this.state.initialAmount}
+                onChange={this.handleInitialAmountChange}
+              />
+            </label>
+          </div>
+          <div className="input-wrapper">
+            <label>
+              Interest Rate (%)
+              <p className="input-hint">Minimum: 0.01%</p>
+              <input
+                type="number"
+                min="0.01"
+                step="any"
+                required
+                value={this.state.interestRate}
+                onChange={this.handleInterestRateChange}
+              />
+            </label>
+          </div>
+          <div className="input-wrapper">
+            <label>
+              Number of Years
+              <p className="input-hint">Whole years only</p>
+              <input
+                type="number"
+                min="1"
+                required
+                value={this.state.numberOfYears}
+                onChange={this.handleNumberOfYearsChange}
+              />
+            </label>
+          </div>
           <input type="submit" value="Calculate Compound Interest" />
         </form>
         <ResultView
