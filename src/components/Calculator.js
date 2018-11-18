@@ -55,43 +55,45 @@ class Calculator extends Component {
   }
 
   render() {
-    return <div>
-      <h1>{this.props.title}</h1>
-      <form className="compound-interest-form" onSubmit={this.handleSubmit}>
-        <input
-          type="number"
-          placeholder="Initial Amount"
-          min="1"
-          required
-          value={this.state.initialAmount}
-          onChange={this.handleInitialAmountChange}
-        />
-        <br/>
-        <input
-          type="number"
-          placeholder="Interest Rate"
-          min="0.01"
-          step="any"
-          required
-          value={this.state.interestRate}
-          onChange={this.handleInterestRateChange}
-        />
-        <br/>
-        <input
-          type="number"
-          placeholder="Number of Years"
-          min="1"
-          step="any"
-          required
-          value={this.state.numberOfYears}
-          onChange={this.handleNumberOfYearsChange}
-        />
-        <br/>
-        <input type="submit" value="Calculate Compound Interest" />
-        <br/>
-      </form>
-      <ResultView balance={this.state.balance} initialAmountForResultView={this.state.initialAmountForResultView}/>
-    </div>
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        <form className="compound-interest-form" onSubmit={this.handleSubmit}>
+          <input
+            type="number"
+            placeholder="Initial Amount"
+            min="1"
+            required
+            value={this.state.initialAmount}
+            onChange={this.handleInitialAmountChange}
+          />
+          <br/>
+          <input
+            type="number"
+            placeholder="Interest Rate"
+            min="0.01"
+            step="any"
+            required
+            value={this.state.interestRate}
+            onChange={this.handleInterestRateChange}
+          />
+          <br/>
+          <input
+            type="number"
+            placeholder="Number of Years"
+            min="1"
+            step="any"
+            required
+            value={this.state.numberOfYears}
+            onChange={this.handleNumberOfYearsChange}
+          />
+          <br/>
+          <input type="submit" value="Calculate Compound Interest" />
+          <br/>
+        </form>
+        <ResultView balance={this.state.balance} initialAmountForResultView={this.state.initialAmountForResultView}/>
+      </div>
+    );
   }
 }
 

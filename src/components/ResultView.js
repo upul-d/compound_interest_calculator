@@ -6,7 +6,7 @@ const ResultView = ({balance, initialAmountForResultView}) => {
     <p>Balance: £{balance}</p>
     <p>Initial Amount: £{initialAmountForResultView}</p>
     </div>
-  )
+  );
 }
 
 export default ResultView;
