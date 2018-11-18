@@ -63,7 +63,7 @@ class Calculator extends Component {
         <h1>{this.props.title}</h1>
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
           <label>
-            Initial Amount
+            Initial Amount (Principal)
             <br/>
             <input
               id="amount"
@@ -76,7 +76,7 @@ class Calculator extends Component {
           </label>
           <br/>
           <label>
-            Interest Rate
+            Interest Rate (%)
             <br/>
             <input
               type="number"
@@ -89,8 +89,9 @@ class Calculator extends Component {
           </label>
           <br/>
           <label>
-            Years
+            Number of Years
             <br/>
+            <p className="input-hint">Whole years only</p>
             <input
               type="number"
               min="1"
@@ -101,7 +102,6 @@ class Calculator extends Component {
           </label>
           <br/>
           <input type="submit" value="Calculate Compound Interest" />
-          <br/>
         </form>
         <ResultView
           balance={this.state.balance}

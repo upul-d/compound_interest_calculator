@@ -1,1 +1,9 @@
-/* TODO: Add CSS */
+/* TODO: Add more CSS */
+
+.input-hint {
+  font-size: 80%;
+  line-height: 1;
+  margin-top: 0.05em;
+  margin-bottom: 0.1em;
+  padding-left: 0.25em;
+}
