@@ -62,6 +62,9 @@ class Calculator extends Component {
     return (
       <div>
         <h1>{this.props.title}</h1>
+        <div className="calculator-wrapper">
+        <h2>Calculator</h2>
+        <p className="above-form-instruction">Enter Your Values</p>
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
           <div className="input-wrapper">
             <label>
@@ -107,6 +110,7 @@ class Calculator extends Component {
           </div>
           <input id="calculate-button" type="submit" value="Calculate" />
         </form>
+        </div>
         <ResultView
           balance={this.state.balance}
           initialAmountForResultView={this.state.initialAmountForResultView}

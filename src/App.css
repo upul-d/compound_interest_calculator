@@ -1,3 +1,7 @@
+.above-form-instruction {
+  margin-bottom: 0px;
+}
+
 .input-wrapper {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
@@ -6,13 +10,13 @@
 .input-hint {
   font-size: 80%;
   line-height: 1;
-  margin-top: 0.05em;
-  margin-bottom: 0.1em;
+  margin-top: 0.05rem;
+  margin-bottom: 0.1rem;
 }
 
 #amount {
   background-image: url('~/pound_sign.svg');
-  background-size: 0.9em;
+  background-size: 0.9rem;
   background-repeat: no-repeat;
   background-position:left;
   padding-left: 0.8rem;
