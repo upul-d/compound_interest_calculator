@@ -72,7 +72,7 @@ class Calculator extends Component {
         <h1>{this.props.title}</h1>
         <div className="calculator-wrapper">
         <h2>Calculator</h2>
-        <p className="above-form-instruction">Enter Your Values</p>
+        <p className="above-form-instruction">Please Enter Your Values Below:</p>
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
           <div className="input-wrapper">
             <label>
@@ -122,9 +122,6 @@ class Calculator extends Component {
         <ResultView
           balance={this.state.balance}
           inputsForResultView={this.state.inputsForResultView}
-          // initialAmountForResultView={this.state.initialAmountForResultView}
-          // interestRateForResultView={this.state.interestRateForResultView}
-          // numberOfYearsForResultView={this.state.numberOfYearsForResultView}
           amountFromInterest={this.state.amountFromInterest}
         />
         <UsageNotesView />

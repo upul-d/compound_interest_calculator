@@ -1,5 +1,6 @@
 .above-form-instruction {
   margin-bottom: 0px;
+  opacity: 0.5;
 }
 
 .input-wrapper {
@@ -9,7 +10,8 @@
 
 .input-hint {
   font-size: 80%;
-  line-height: 1;
+  opacity: 0.5;
+  line-height: 0.75;
   margin-top: 0.05rem;
   margin-bottom: 0.1rem;
 }
