@@ -6,6 +6,9 @@ const calculator = {
     const multiplier = 1 + this.getInterestRateAsDecimal(interestRate);
     const balance = initialAmount * multiplier ** numberOfYears;
     return balance.toFixed(2);
+  },
+  calculateAmountGainedFromInterest: function(compoundInterest, initialAmount) {
+    return (compoundInterest - initialAmount).toFixed(2);
   }
 }
 
