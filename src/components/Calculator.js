@@ -65,7 +65,7 @@ class Calculator extends Component {
         <form className="compound-interest-form" onSubmit={this.handleSubmit}>
           <label>
             Initial Amount (Principal)
-            <br/>
+            <p className="input-hint">Minimum: £1</p>
             <input
               id="amount"
               type="number"
@@ -78,7 +78,7 @@ class Calculator extends Component {
           <br/>
           <label>
             Interest Rate (%)
-            <br/>
+            <p className="input-hint">Minimum: 0.01%</p>
             <input
               type="number"
               min="0.01"
@@ -91,7 +91,6 @@ class Calculator extends Component {
           <br/>
           <label>
             Number of Years
-            <br/>
             <p className="input-hint">Whole years only</p>
             <input
               type="number"
