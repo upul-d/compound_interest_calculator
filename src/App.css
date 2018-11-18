@@ -7,3 +7,24 @@
   margin-bottom: 0.1em;
   padding-left: 0.25em;
 }
+
+.usage-notes-container {
+  margin-top: 10rem;
+}
+
+.usage-notes-header {
+  margin-bottom: 0.1rem;
+}
+
+.usage-notes-list {
+  margin-top: 0.1rem;
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.usage-notes-list, li:before {
+  content:"*  ";
+}
+
+
+

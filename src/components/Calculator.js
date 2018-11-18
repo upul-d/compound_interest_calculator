@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ResultView from './ResultView';
+import UsageNotesView from './UsageNotesView';
 import calculator from '../models/calculator.js';
 
 class Calculator extends Component {
@@ -108,6 +109,7 @@ class Calculator extends Component {
           initialAmountForResultView={this.state.initialAmountForResultView}
           amountFromInterest={this.state.amountFromInterest}
         />
+        <UsageNotesView />
       </div>
     );
   }
