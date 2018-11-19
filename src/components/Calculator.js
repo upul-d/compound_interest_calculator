@@ -31,6 +31,12 @@ class Calculator extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleInputFocusLoss = (event) => {
+    if (!event.target.value) {
+      this.setState({errorsForInputs: {initialAmount: ''}});
+    }
+  }
+
   handleInitialAmountChange(event) {
     const validInput = calculator.isValidInput(event.target.value);
     if (validInput) {
@@ -44,6 +50,7 @@ class Calculator extends Component {
       );
       return;
     }
+
     const error = 'Please enter a positive number';
     this.setState(
       {errorsForInputs:
@@ -55,24 +62,27 @@ class Calculator extends Component {
     );
   }
 
-  handleInputFocusLoss = (event) => {
-    if (!event.target.value) {
-      this.setState({errorsForInputs: {initialAmount: ''}});
-    }
-  }
-
   handleInterestRateChange(event) {
     const validInput = calculator.isValidInput(event.target.value);
     if (validInput) {
-      this.setState({interestRate: event.target.value});
+      this.setState(
+        {
+          interestRate: event.target.value,
+          errorsForInputs: {
+            interestRate: ''
+          }
+        }
+      );
       return;
     }
+
     const error = 'Please enter a positive number';
     this.setState(
       {errorsForInputs:
         {
           interestRate: error
-        }
+        },
+        interestRate: ''
       }
     );
   }
@@ -80,15 +90,24 @@ class Calculator extends Component {
   handleNumberOfYearsChange(event) {
     const validInput = calculator.isValidInput(event.target.value);
     if (validInput) {
-      this.setState({numberOfYears: event.target.value});
+      this.setState(
+        {
+          numberOfYears: event.target.value,
+          errorsForInputs: {
+            numberOfYears: ''
+          }
+        }
+      );
       return;
     }
+
     const error = 'Please enter a positive number';
     this.setState(
       {errorsForInputs:
         {
           numberOfYears: error
-        }
+        },
+        numberOfYears: ''
       }
     );
   }
@@ -163,6 +182,7 @@ class Calculator extends Component {
                   required
                   value={this.state.interestRate}
                   onChange={this.handleInterestRateChange}
+                  onBlur={this.handleInputFocusLoss}
                 />
               </label>
             </div>
@@ -177,6 +197,7 @@ class Calculator extends Component {
                   required
                   value={this.state.numberOfYears}
                   onChange={this.handleNumberOfYearsChange}
+                  onBlur={this.handleInputFocusLoss}
                 />
               </label>
             </div>
