@@ -30,9 +30,9 @@ This includes a working equation that can be used in your application.
 
 - Setup a React application
 - A user should be able to input 3 values:
-- Starting value (principal)
-- Interest rate
-- Years
+  - Starting value (principal)
+  - Interest rate
+  - Years
 - On submit the user should see the value of their investment after the number of years
 they input
 - UX and styling is completely up to you, however, this is not a design test so an
