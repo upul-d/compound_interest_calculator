@@ -1,6 +1,15 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .above-form-instruction {
   margin-bottom: 0px;
   opacity: 0.5;
+}
+
+input:focus, input:hover {
+  outline: none;
+  border-color: #6495ED;
 }
 
 .input-wrapper {
@@ -17,9 +26,9 @@
 }
 
 .input-error-display {
-  color: red;
+  color: #FF4500;
   font-size: 80%;
-  opacity: 0.5;
+  opacity: 0.7;
   line-height: 0.75;
   margin-top: 0.05rem;
   margin-bottom: 0.1rem;
