@@ -31,6 +31,21 @@ class Calculator extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  validateInput(event, inputName) {
+    const validInput = calculator.isValidInput(event.target.value);
+    if (validInput) {
+      this.setState(
+        {
+          [inputName]: event.target.value,
+          errorsForInputs: {
+            [inputName]: ''
+          }
+        }
+      );
+      return true;
+    }
+  }
+
   createErrorMessage(inputName) {
     const error = 'Please enter a positive number';
     this.setState(
@@ -45,53 +60,29 @@ class Calculator extends Component {
 
   handleInputFocusLoss = (event) => {
     if (!event.target.value) {
-      this.setState({errorsForInputs: {initialAmount: ''}});
+      this.setState({errorsForInputs: {}});
     }
   }
 
   handleInitialAmountChange(event) {
-    const validInput = calculator.isValidInput(event.target.value);
-    if (validInput) {
-      this.setState(
-        {
-          initialAmount: event.target.value,
-          errorsForInputs: {
-            initialAmount: ''
-          }
-        }
-      );
+    const isValid = this.validateInput(event, 'initialAmount');
+    if (isValid) {
       return;
     }
     this.createErrorMessage('initialAmount');
   }
 
   handleInterestRateChange(event) {
-    const validInput = calculator.isValidInput(event.target.value);
-    if (validInput) {
-      this.setState(
-        {
-          interestRate: event.target.value,
-          errorsForInputs: {
-            interestRate: ''
-          }
-        }
-      );
+    const isValid = this.validateInput(event, 'interestRate');
+    if (isValid) {
       return;
     }
     this.createErrorMessage('interestRate');
   }
 
   handleNumberOfYearsChange(event) {
-    const validInput = calculator.isValidInput(event.target.value);
-    if (validInput) {
-      this.setState(
-        {
-          numberOfYears: event.target.value,
-          errorsForInputs: {
-            numberOfYears: ''
-          }
-        }
-      );
+    const isValid = this.validateInput(event, 'numberOfYears');
+    if (isValid) {
       return;
     }
     this.createErrorMessage('numberOfYears');
