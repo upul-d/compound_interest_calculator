@@ -19,9 +19,9 @@ class Calculator extends Component {
       },
       amountFromInterest: '',
       errorsForInputs: {
-        initialAmount: '',
-        interestRate: '',
-        numberOfYears: ''
+        initialAmount: null,
+        interestRate: null,
+        numberOfYears: null
       }
     };
 
@@ -34,7 +34,14 @@ class Calculator extends Component {
   handleInitialAmountChange(event) {
     const validInput = calculator.isValidInput(event.target.value);
     if (validInput) {
-      this.setState({initialAmount: event.target.value});
+      this.setState(
+        {
+          initialAmount: event.target.value,
+          errorsForInputs: {
+            initialAmount: ''
+          }
+        }
+      );
       return;
     }
     const error = 'Please enter a positive number';
@@ -42,9 +49,16 @@ class Calculator extends Component {
       {errorsForInputs:
         {
           initialAmount: error
-        }
+        },
+        initialAmount: ''
       }
     );
+  }
+
+  handleInputFocusLoss = (event) => {
+    if (!event.target.value) {
+      this.setState({errorsForInputs: {initialAmount: ''}});
+    }
   }
 
   handleInterestRateChange(event) {
@@ -133,6 +147,7 @@ class Calculator extends Component {
                   required
                   value={this.state.initialAmount}
                   onChange={this.handleInitialAmountChange}
+                  onBlur={this.handleInputFocusLoss}
                 />
               </label>
             </div>
