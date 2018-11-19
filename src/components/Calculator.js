@@ -31,6 +31,18 @@ class Calculator extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  createErrorMessage(inputName) {
+    const error = 'Please enter a positive number';
+    this.setState(
+      {errorsForInputs:
+        {
+          [inputName]: error
+        },
+        [inputName]: ''
+      }
+    );
+  }
+
   handleInputFocusLoss = (event) => {
     if (!event.target.value) {
       this.setState({errorsForInputs: {initialAmount: ''}});
@@ -50,16 +62,7 @@ class Calculator extends Component {
       );
       return;
     }
-
-    const error = 'Please enter a positive number';
-    this.setState(
-      {errorsForInputs:
-        {
-          initialAmount: error
-        },
-        initialAmount: ''
-      }
-    );
+    this.createErrorMessage('initialAmount');
   }
 
   handleInterestRateChange(event) {
@@ -75,16 +78,7 @@ class Calculator extends Component {
       );
       return;
     }
-
-    const error = 'Please enter a positive number';
-    this.setState(
-      {errorsForInputs:
-        {
-          interestRate: error
-        },
-        interestRate: ''
-      }
-    );
+    this.createErrorMessage('interestRate');
   }
 
   handleNumberOfYearsChange(event) {
@@ -100,16 +94,7 @@ class Calculator extends Component {
       );
       return;
     }
-
-    const error = 'Please enter a positive number';
-    this.setState(
-      {errorsForInputs:
-        {
-          numberOfYears: error
-        },
-        numberOfYears: ''
-      }
-    );
+    this.createErrorMessage('numberOfYears');
   }
 
   handleSubmit(event) {
