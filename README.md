@@ -1,6 +1,6 @@
 # Compound Interest Calculator
 
-This project is a React app which allows compound interest to be calculated. The project has been bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React app for calculating compound interest. The project has been bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Contents
 * [Run the project in the browser](#run-the-project-in-the-browser)
